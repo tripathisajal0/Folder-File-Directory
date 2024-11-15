@@ -11,10 +11,10 @@ mongoose.connect(process.env.MONGODB_URL)
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => console.error('Failed to connect to MongoDB', err));
 
-const Item = require('./models/Item');
+const Item = require('./models/item');  // Corrected the case here
 
-
-app.post('/api/items', async (req, res) => {           //req for creating itms
+// Post request for creating items
+app.post('/api/items', async (req, res) => {
     try {
         const { name, type, parentId } = req.body;
 
