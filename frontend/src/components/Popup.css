@@ -1,0 +1,85 @@
+/* frontend/src/components/Popup.css */
+
+.popupContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popupContent {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;  /* Added to make sure padding doesn't cause overflow */
+}
+
+.popupContent h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.popupContent input,
+.popupContent select,
+.popupContent button {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%; /* Ensures the input, select, and buttons take full width */
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;  /* Added to make sure padding doesn't cause overflow */
+}
+
+.popupContent input,
+.popupContent select {
+    margin-bottom: 15px;
+}
+
+.popupContent button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.popupContent button:hover {
+    background-color: #45a049;
+}
+
+.popupContent button:nth-child(2) {
+    background-color: #f44336;
+}
+
+.popupContent button:nth-child(2):hover {
+    background-color: #d32f2f;
+}
+
+@media (max-width: 768px) {
+    .popupContent {
+        width: 90%;  /* Popup content width adjusts to 90% on smaller screens */
+        padding: 15px;  /* Reduced padding for small screens */
+    }
+
+    .popupContent h2 {
+        font-size: 1.2rem;  /* Adjusted heading size */
+    }
+
+    .popupContent input,
+    .popupContent select,
+    .popupContent button {
+        font-size: 0.9rem;  /* Slightly smaller font size on small screens */
+    }
+}

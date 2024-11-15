@@ -1,0 +1,224 @@
+/* frontend/src/components/FileDirectory.css */
+
+.mainContainer {
+  width: 100%;
+  max-width: 1200px;
+  height: 90vh;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #445571;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  box-sizing: border-box; /* Ensure padding is included in width and height calculations */
+}
+
+.mainHeading {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.innerDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap; /* Allow wrapping for small screens */
+}
+
+.innerDiv input,
+.innerDiv select,
+.innerDiv button {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.innerDiv input,
+.innerDiv select {
+  width: 200px;
+}
+
+.innerDiv button {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.innerDiv button:hover {
+  background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .innerDiv {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .innerDiv input,
+  .innerDiv select,
+  .innerDiv button {
+    width: 100%; /* Make elements full-width */
+    margin-bottom: 10px; /* Add some space between inputs/buttons */
+    padding: 12px; /* Adjust padding to match button size */
+    font-size: 1rem; /* Same font size as button */
+  }
+}
+
+@media (max-width: 480px) {
+  .mainHeading {
+    font-size: 2rem;
+  }
+ 
+  .innerDiv {
+    gap: 10px;
+  }
+  
+  .innerDiv input,
+  .innerDiv select,
+  .innerDiv button {
+    padding: 10px; /* Adjust padding */
+    font-size: 0.9rem; /* Adjust font size */
+  }
+}
+
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-left: 0;
+}
+
+.directoryItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 10px 15px;
+  margin: 10px 0;
+  /* background-color: #fff; */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+  width: 100%;
+  box-sizing: border-box;
+  background: #f9f9f9; 
+}
+
+.directoryItem:hover {
+  background-color: #e8e8e8;
+}
+
+.item-header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.item-header button {
+  padding: 5px 8px;
+  font-size: 0.9rem;
+}
+
+.expandButton {
+  background-color: #ddd;
+  border: none;
+  padding: 2px 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.expandButton:hover {
+  background-color: #bbb;
+}
+
+.nestedItems {
+  padding-left: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.directoryItem button {
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.directoryItem button.rename {
+  background-color: #2196F3;
+  margin-right: 5px;
+}
+
+.directoryItem button:hover {
+  opacity: 0.9;
+}
+
+.directoryItem button.rename:hover {
+  background-color: #1976D2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .innerDiv {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .innerDiv input,
+  .innerDiv select,
+  .innerDiv button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .directoryItem {
+    width: 100%;
+  }
+
+  .item-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nestedItems {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainHeading {
+    font-size: 2rem;
+  }
+
+  .innerDiv {
+    gap: 10px;
+  }
+
+  .directoryItem {
+    padding: 12px;
+  }
+
+  .directoryItem button {
+    padding: 4px 8px;
+  }
+}
