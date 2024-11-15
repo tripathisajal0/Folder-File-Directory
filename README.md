@@ -31,4 +31,4 @@ This is a simple application that allows users to create, update, delete, and or
 - **`models/item.js`**: Mongoose schema for managing items (files and folders).
 - **`config/`**: Contains configuration files like `.env`.
 
-URL for the project :- https://folder-file-directory-frontend.onrender.com/          ///paste this url in chrome/any browser
+### URL for the project :- https://folder-file-directory-frontend.onrender.com/          
