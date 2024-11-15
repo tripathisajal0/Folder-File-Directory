@@ -5,16 +5,23 @@ require('dotenv').config();
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+
+// Enable CORS for frontend URL
+const corsOptions = {
+    origin: 'https://folder-file-directory-frontend.onrender.com',  // Frontend URL
+    methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+    allowedHeaders: ['Content-Type'],
+};
+
+app.use(cors(corsOptions));  // Apply CORS configuration
 
 mongoose.connect(process.env.MONGODB_URL)
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => console.error('Failed to connect to MongoDB', err));
 
-const Item = require('./models/item');  // Corrected the case here
+const Item = require('./models/Item');
 
-// Post request for creating items
-app.post('/api/items', async (req, res) => {
+app.post('/api/items', async (req, res) => {  // req for creating items
     try {
         const { name, type, parentId } = req.body;
 
